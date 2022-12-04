@@ -2,12 +2,13 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
-#include "filename.h"
+#include "imageclass.h"
 
 
 int main()
 {
    ImageMap my_image("/home/razikszy/CLionProjects/MotherInLaw/dupa.jpg");
+   my_image.sizeImage();
    my_image.drawCircle(15);
    my_image.show();
    auto dupa = ImageMap::create_out_filename("dupa");

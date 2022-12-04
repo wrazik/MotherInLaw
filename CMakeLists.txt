@@ -6,9 +6,9 @@ project(MotherInLaw)
 find_package(OpenCV CONFIG REQUIRED)
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable(MotherInLaw main.cpp import.cpp export.cpp filename.cpp filename.h)
+add_executable(MotherInLaw main.cpp import.cpp export.cpp imageclass.cpp imageclass.h)
 target_link_libraries(MotherInLaw ${OpenCV_LIBS})
 
 find_package(Catch2 CONFIG REQUIRED)
-add_executable(run_tests filename.cpp filename.h filename_test.cpp)
+add_executable(run_tests imageclass.cpp imageclass.h imageclass_test.cpp)
 target_link_libraries(run_tests PRIVATE Catch2::Catch2 Catch2::Catch2WithMain ${OpenCV_LIBS})
