@@ -8,8 +8,8 @@
 int main()
 {
    ImageMap my_image("/home/razikszy/CLionProjects/MotherInLaw/dupa.jpg");
-   my_image.sizeImage();
-   my_image.drawCircle(15);
+   my_image.sizeImage();//sizing image - actual value will be 550 mm
+   my_image.drawCircle(378, 3); //size of 100 mm
    my_image.show();
    auto dupa = ImageMap::create_out_filename("dupa");
 

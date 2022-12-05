@@ -33,11 +33,11 @@ void ImageMap::show() {
     }
 }
 
-void ImageMap::drawCircle(int radius) {
+void ImageMap::drawCircle(int radius, int sizeLine) {
     int centerX = pixels.rows/2;
     int centerY = pixels.cols/2;
 
-    cv::circle(pixels,cv::Point (centerX,centerY),radius,cv::Scalar (0, 255, 0));
+    cv::circle(pixels,cv::Point (centerX,centerY),radius,cv::Scalar (0, 255, 0), sizeLine);
 }
 
 void ImageMap::sizeImage(){
