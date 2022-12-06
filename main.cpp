@@ -3,15 +3,16 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 #include "imageclass.h"
+#include "mathcalculate.h"
 
 
 int main()
 {
    ImageMap my_image("/home/razikszy/CLionProjects/MotherInLaw/dupa.jpg");
    my_image.sizeImage();//sizing image - actual value will be 550 mm
-   my_image.drawCircle(378, 3); //size of 100 mm
+   my_image.drawCircle(mmToPx(100), 3); //size of 100 mm
    my_image.show();
-   auto dupa = ImageMap::create_out_filename("dupa");
+   auto dupa = ImageMap::createOutFilename("dupa");
 
 
   //  std::string image_path = samples::findFile("/home/razikszy/CLionProjects/MotherInLaw/starry_night.jpg");

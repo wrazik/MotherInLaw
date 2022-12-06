@@ -1,4 +1,5 @@
 #include "imageclass.h"
+#include "mathcalculate.h"
 #include <iostream>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
@@ -6,9 +7,9 @@
 
 ImageMap::ImageMap(const std::string& filename) {//init.
     pixels = imread(filename, cv::IMREAD_COLOR);
-    outFileName = create_out_filename(filename);
+    outFileName = createOutFilename(filename);
 }
-    std::string ImageMap::create_out_filename(const std::string& input_filename) {
+    std::string ImageMap::createOutFilename(const std::string& input_filename) {
         auto foo = input_filename.find_last_of('.');
 
         std::string output_filename = "";
@@ -33,16 +34,16 @@ void ImageMap::show() {
     }
 }
 
-void ImageMap::drawCircle(int radius, int sizeLine) {
-    int centerX = pixels.rows/2;
-    int centerY = pixels.cols/2;
+void ImageMap::drawCircle(int radius, int size_line) {
+    int center_x = pixels.rows/2;
+    int center_y = pixels.cols/2;
 
-    cv::circle(pixels,cv::Point (centerX,centerY),radius,cv::Scalar (0, 255, 0), sizeLine);
+    cv::circle(pixels,cv::Point (center_x,center_y),radius,cv::Scalar (0, 255, 0), size_line);
 }
 
 void ImageMap::sizeImage(){
-    int up_width = 1965; //520 mm from px.
-    int up_height = 1965;
+    int up_width = mmToPx(550); //in mm
+    int up_height = mmToPx(550);//in mm
     cv::Mat resized_up;
     //resize up
     cv::resize(pixels, pixels, cv::Size(up_width, up_height), cv::INTER_LINEAR);
