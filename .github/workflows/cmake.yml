@@ -9,54 +9,15 @@ jobs:
     strategy:
       matrix:
         cxx:
-          - g++-5
-          - g++-6
-          - g++-7
-          - g++-8
-          - g++-9
           - g++-10
-          - clang++-6.0
-          - clang++-7
-          - clang++-8
-          - clang++-9
           - clang++-10
         build_type: [Debug, Release]
         std: [14]
         include:
-          - cxx: g++-5
-            other_pkgs: g++-5
-          - cxx: g++-6
-            other_pkgs: g++-6
-          - cxx: g++-7
-            other_pkgs: g++-7
-          - cxx: g++-8
-            other_pkgs: g++-8
-          - cxx: g++-9
-            other_pkgs: g++-9
           - cxx: g++-10
             other_pkgs: g++-10
-          - cxx: clang++-6.0
-            other_pkgs: clang-6.0
-          - cxx: clang++-7
-            other_pkgs: clang-7
-          - cxx: clang++-8
-            other_pkgs: clang-8
-          - cxx: clang++-9
-            other_pkgs: clang-9
           - cxx: clang++-10
             other_pkgs: clang-10
-          # Clang 6 + C++17
-          # does not work with the default libstdc++ version thanks
-          # to a disagreement on variant implementation.
-          # - cxx: clang++-6.0
-          #   build_type: Debug
-          #   std: 17
-          #   other_pkgs: clang-6.0
-          # - cxx: clang++-6.0
-          #   build_type: Release
-          #   std: 17
-          #   other_pkgs: clang-6.0
-          # Clang 10 + C++17
           - cxx: clang++-10
             build_type: Debug
             std: 17
