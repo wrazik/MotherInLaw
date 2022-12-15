@@ -25,7 +25,10 @@ jobs:
     - name: Install vcpkg
       run: |
         git clone https://github.com/Microsoft/vcpkg.git
-        vcpkg install catch2 #opencv
+        vcpkg install catch2
+    - name: Install opencv
+      run: |
+        vcpkg install opencv
     - name: Check out code
       uses: actions/checkout@master
     - name: Create build directory
