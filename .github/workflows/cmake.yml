@@ -12,7 +12,7 @@ jobs:
   MotherInLaw:
     runs-on: ubuntu-latest
     env:
-      path: MotherInLaw/build
+      path: build
     steps:
     - name: Check out code
       uses: actions/checkout@master
