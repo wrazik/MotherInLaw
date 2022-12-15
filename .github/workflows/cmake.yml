@@ -1,5 +1,6 @@
 name: MotherInLaw
 
+on:
   push:
     branches:
       - main
