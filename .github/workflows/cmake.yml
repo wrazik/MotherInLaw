@@ -21,7 +21,7 @@ jobs:
     steps:
     - name: Install depencies for vcpkg
       run: |
-        sudo apt-get install at-spi2-core x11-xserver-utils
+        sudo apt-get install at-spi2-core x11-xserver-utils at-spi2-core
     - name: Install vcpkg
       run: |
         git clone https://github.com/Microsoft/vcpkg.git
