@@ -21,7 +21,7 @@ jobs:
     steps:
     - name: Install depencies for vcpkg
       run: |
-        apt-get install python3-distutils    
+        sudo apt-get install python3-distutils    
     - name: Install vcpkg
       run: |
         git clone https://github.com/Microsoft/vcpkg.git
