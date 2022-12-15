@@ -3,7 +3,7 @@ name: MotherInLaw
 on: [pull_request, workflow_dispatch]
 
 jobs:
-  password-check:
+  MotherInLaw:
     runs-on: ubuntu-latest
     env:
       path: MotherInLaw/build
