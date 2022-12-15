@@ -22,11 +22,10 @@ jobs:
     - name: Install depencies for vcpkg
       run: |
         sudo apt-get install at-spi2-core
-        sudo apt-get install bison
     - name: Install vcpkg
       run: |
         git clone https://github.com/Microsoft/vcpkg.git
-        vcpkg install catch2 opencv
+        # vcpkg install catch2 opencv
     - name: Check out code
       uses: actions/checkout@master
     - name: Create build directory
