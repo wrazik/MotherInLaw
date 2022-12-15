@@ -16,4 +16,4 @@ jobs:
       working-directory: ${{ env.path }}
       run: |
         cmake ..
-        make
+      
