@@ -21,14 +21,16 @@ jobs:
     steps:
     - name: Install depencies for vcpkg
       run: |
-        sudo apt-get install ninja autoconf-archive python3-distutils at-spi2-core x11-xserver-utils at-spi2-core nickle cairo-5c xorg-docs-core
-    - name: Install vcpkg
+        sudo apt-get install ninja-build autoconf-archive python3-distutils at-spi2-core x11-xserver-utils at-spi2-core nickle cairo-5c xorg-docs-core
+    - name: Install vcpkg catch2
       run: |
         git clone https://github.com/Microsoft/vcpkg.git
         vcpkg install catch2
+    - name: Install at-spi2-core
+      run: |
+        vcpkg install at-spi2-core      
     - name: Install opencv
       run: |
-        vcpkg install at-spi2-core
         vcpkg install opencv
     - name: Check log file 
       run: |     
