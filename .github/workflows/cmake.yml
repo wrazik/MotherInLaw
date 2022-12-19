@@ -29,7 +29,7 @@ jobs:
     - name: Install opencv
       run: |
         vcpkg install opencv
-        less /usr/local/share/vcpkg/installed/vcpkg/issue_body.md
+        cat /usr/local/share/vcpkg/buildtrees/at-spi2-core/config-x64-linux-dbg-out.log
     - name: Check out code
       uses: actions/checkout@master
     - name: Create build directory
