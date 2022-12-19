@@ -19,23 +19,15 @@ jobs:
     env:
       path: build
     steps:
-    - name: Python test
-      run: |
-        python3 --version
-    - name: Install additional libraries for opencv
-      run: |
-        sudo apt-get install libdbus-1-dev libxi-dev libxtst-dev libx11-dev libgles2-mesa-dev xutils-dev
+    - name: Check out code
+      uses: actions/checkout@master
     - name: Install vcpkg
       run: |
         git clone https://github.com/Microsoft/vcpkg.git
-    - name: Install harfbuzz
-      run: |
-        vcpkg install harfbuzz        
+        ./vcpkg/bootstrap-vcpkg.sh
+        vcpkg install catch2 opencv
     - name: Install catch2 opencv
       run: |
-        vcpkg install catch2 opencv
-    - name: Check out code
-      uses: actions/checkout@master
     - name: Create build directory
       run: mkdir ${{ env.path }}
     - name: Compile
