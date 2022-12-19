@@ -23,7 +23,7 @@ jobs:
       uses: actions/checkout@master
     - name: Prerequirements
       run: |
-        apt-get install -y libdbus-1 libxi-dev libxtst-dev
+        sudo apt-get install -y libdbus-1 libxi-dev libxtst-dev
     - name: Install vcpkg
       run: |
         git clone https://github.com/Microsoft/vcpkg.git
