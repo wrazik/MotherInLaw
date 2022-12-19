@@ -19,6 +19,9 @@ jobs:
     env:
       path: build
     steps:
+    - name: Python test
+      run: |
+        python3 --version
     - name: Install additional libraries for opencv
       run: |
         sudo apt-get install libdbus-1-dev libxi-dev libxtst-dev libx11-dev libgles2-mesa-dev xutils-dev
