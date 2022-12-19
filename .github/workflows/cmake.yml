@@ -28,7 +28,10 @@ jobs:
         vcpkg install catch2
     - name: Install opencv
       run: |
+        vcpkg install at-spi2-core
         vcpkg install opencv
+    - name: Check log file 
+      run: |     
         cat /usr/local/share/vcpkg/buildtrees/at-spi2-core/config-x64-linux-dbg-out.log
     - name: Check out code
       uses: actions/checkout@master
